@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sell
+{% endblock %}
+
+{% block main %}
+    <form action="/sell" method="post">
+        <p>I would like to sell <input autocomplete="off" autofocus class="form-control" name="shares" type="text"/> shares of
+        <select name="symbol">{% for name in names %}<option value={{name}}>{{name}}</option>{% endfor %}</select>.
+        <button class="btn btn-primary" type="submit">Make Sale</button>
+    </form>
+{% endblock %}
